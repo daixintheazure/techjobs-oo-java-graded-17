@@ -18,6 +18,8 @@ public class Main {
             System.out.println(job.toString());
         }
 
+        //System.out.println(job1.getEmployer());
+
     }
 
 }

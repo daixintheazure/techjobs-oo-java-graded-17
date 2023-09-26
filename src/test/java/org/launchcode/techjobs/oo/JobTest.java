@@ -1,15 +1,15 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+
+import static org.junit.Assert.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
 
     Job testJob = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    Job testJob2 = new Job();
-    Job testjob3 = new Job();
+    Job testJob2;
+    Job testjob3;
 
     @Test
     public void emptyTest() {
@@ -26,7 +26,7 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields() {
         assertEquals(1, testJob.getId().longValue());
-        assertEquals(Integer.class, testJob.getId().getClass());
+        assertTrue(Integer.class == testJob.getId().getClass());
 
         assertEquals("Code tester", testJob.getName());
         assertEquals(String.class, testJob.getName().getClass());
@@ -34,6 +34,14 @@ public class JobTest {
         assertEquals("CODE", testJob.getEmployer().getValue());
         assertEquals(Employer.class, testJob.getEmployer().getClass());
 
+        assertEquals("Eworld", testJob.getLocation().getValue());
+        assertEquals(Location.class, testJob.getLocation().getClass());
+
+        assertEquals("Quality control", testJob.getPositionType().getValue());
+        assertEquals(PositionType.class, testJob.getPositionType().getClass());
+
+        assertEquals("Persistence", testJob.getCoreCompetency().getValue());
+        assertEquals(CoreCompetency.class, testJob.getCoreCompetency().getClass());
 
     }
 

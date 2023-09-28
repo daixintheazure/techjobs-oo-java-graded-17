@@ -34,13 +34,18 @@ public class Job {
 
     @Override
     public String toString() {
-        String jobInfo ="\n"+
-                "ID: " + id + "\n"+
-                "Name: " + name + "\n"+
-                "Employer: " + employer + "\n"+
-                "Location: " + location + "\n"+
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+        String s = System.lineSeparator();
+
+
+
+
+        String jobInfo = s +
+                "ID: " + id + s +
+                "Name: " + name + s +
+                "Employer: " + employer + s +
+                "Location: " + location + s +
+                "Position Type: " + positionType + s +
+                "Core Competency: " + coreCompetency + s;
 
         return jobInfo;
     }

@@ -11,6 +11,8 @@ public class JobTest {
     Job testJob2;
     Job testjob3;
 
+    Job testJob4 = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);
@@ -43,6 +45,10 @@ public class JobTest {
         assertEquals("Persistence", testJob.getCoreCompetency().getValue());
         assertEquals(CoreCompetency.class, testJob.getCoreCompetency().getClass());
 
+    }
+    @Test
+    public void testJobsForEquality() {
+        assertEquals(false, testJob.equals(testJob4));
     }
 
 

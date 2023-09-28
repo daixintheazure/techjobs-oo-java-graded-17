@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class Job {
 
     private int id;
@@ -31,24 +29,61 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+    public String isNull(String name) {
+        String result = "Data not available";
+        if (name != null) {
+            result = name;
+        }
+        return result;
+    }
+
+    public String isNull(Employer employer) {
+        String result = "Data not available";
+        if(employer != null) {
+            result = employer.getValue();
+        }
+        return result;
+    }
+
+    public String isNull(Location location) {
+        String result = "Data not available";
+        if(location != null) {
+            result = location.getValue();
+        }
+        return result;
+    }
+
+    public String isNull(PositionType positionType) {
+        String result = "Data not available";
+        if(positionType != null) {
+            result = positionType.getValue();
+        }
+        return result;
+    }
+
+    public String isNull(CoreCompetency coreCompetency) {
+        String result = "Data not available";
+        if(coreCompetency != null) {
+            result = coreCompetency.getValue();
+        }
+        return result;
+    }
 
     @Override
     public String toString() {
         String s = System.lineSeparator();
 
-
-
-
         String jobInfo = s +
                 "ID: " + id + s +
-                "Name: " + name + s +
-                "Employer: " + employer + s +
-                "Location: " + location + s +
-                "Position Type: " + positionType + s +
-                "Core Competency: " + coreCompetency + s;
+                "Name: " + isNull(name) + s +
+                "Employer: " + isNull(employer) + s +
+                "Location: " + isNull(location) + s +
+                "Position Type: " + isNull(positionType) + s +
+                "Core Competency: " + isNull(coreCompetency) + s;
 
         return jobInfo;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

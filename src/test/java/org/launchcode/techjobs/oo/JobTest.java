@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -51,6 +52,15 @@ public class JobTest {
         assertEquals(false, testJob.equals(testJob4));
     }
 
+    @Test
+    public void testToStringFirstAndLastBlankSpace() {
+        String s = System.lineSeparator();
+        String firstChar = String.valueOf(testJob.toString().charAt(0));
+        assertEquals(firstChar,s);
+    }
+    @Test
+    public  void testToStringContainsCorrectLabelsAndData() {
 
+    }
 
 }

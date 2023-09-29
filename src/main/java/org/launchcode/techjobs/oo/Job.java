@@ -1,5 +1,9 @@
 package org.launchcode.techjobs.oo;
 
+import java.io.StringBufferInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Job {
 
     private int id;
@@ -72,11 +76,29 @@ public class Job {
     @Override
     public String toString() {
         String s = System.lineSeparator();
+        String noData = "Data not available";
+
+        String chkEmployer = employer.getValue();
+
+
+
+        List outPuts = new ArrayList();
+        outPuts.add(name);
+        outPuts.add(chkEmployer);
+        outPuts.add(location);
+        outPuts.add(positionType);
+        outPuts.add(coreCompetency);
+
+        for (Object o: outPuts) {
+            if(o == null || o == "") {
+                o = noData;
+            }
+        }
 
         String jobInfo = s +
                 "ID: " + id + s +
                 "Name: " + isNull(name) + s +
-                "Employer: " + isNull(employer) + s +
+                "Employer: " + outPuts.get(1) + s +
                 "Location: " + isNull(location) + s +
                 "Position Type: " + isNull(positionType) + s +
                 "Core Competency: " + isNull(coreCompetency) + s;

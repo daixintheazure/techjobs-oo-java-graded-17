@@ -34,6 +34,7 @@ public class TestTaskFive extends AbstractTest {
 
 
     @Test
+    //maybe will not pass
     public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
         String firstChar = String.valueOf(job.toString().charAt(0));
@@ -55,6 +56,7 @@ public class TestTaskFive extends AbstractTest {
     }
 
     @Test
+    //maybe will not pass
     public void testToStringContainsCorrectLabelsAndData() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
         String jobString = getJobString(job);
@@ -74,6 +76,7 @@ public class TestTaskFive extends AbstractTest {
     }
 
     @Test
+    //maybe will not pass
     public void testToStringHandlesEmptyField() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job = createJob("Web Developer", "", "StL", "", "Java");
         String jobString = getJobString(job);

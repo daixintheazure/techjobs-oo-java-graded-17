@@ -55,13 +55,15 @@ public class Job {
             }
         }
 
-        return s +
+        String jobInfo = s +
                 "ID: " + id + s +
                 "Name: " + outPuts.get(0) + s +
                 "Employer: " + outPuts.get(1) + s +
                 "Location: " + outPuts.get(2) + s +
                 "Position Type: " + outPuts.get(3) + s +
                 "Core Competency: " + outPuts.get(4) + s;
+
+        return jobInfo;
     }
 
     @Override

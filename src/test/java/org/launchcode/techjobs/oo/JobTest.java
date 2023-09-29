@@ -56,10 +56,22 @@ public class JobTest {
     public void testToStringFirstAndLastBlankSpace() {
         String s = System.lineSeparator();
         String firstChar = String.valueOf(testJob.toString().charAt(0));
+        String lastChar = String.valueOf((testJob.toString().charAt(testJob.toString().length()-1)));
         assertEquals(firstChar,s);
+        assertEquals(lastChar, s);
     }
+
     @Test
     public  void testToStringContainsCorrectLabelsAndData() {
+        String s = System.lineSeparator();
+        String expectedOutput = s +
+                              "ID: " + testJob.getId() + s +
+                             "Name: " + testJob.getName() + s +
+                             "Employer: " + testJob.getEmployer() + s +
+                              "Location: " + testJob.getLocation() + s +
+                             "Position Type: " + testJob.getPositionType() + s +
+                             "Core Competency: " + testJob.getCoreCompetency()+ s;
+        assertEquals(expectedOutput, testJob.toString());
 
     }
 

@@ -33,77 +33,35 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-    public String isNull(String name) {
-        String result = "Data not available";
-        if (name != null) {
-            result = name;
-        }
-        return result;
-    }
-
-    public String isNull(Employer employer) {
-        String result = "Data not available";
-        if(employer != null) {
-            result = employer.getValue();
-        }
-        return result;
-    }
-
-    public String isNull(Location location) {
-        String result = "Data not available";
-        if(location != null) {
-            result = location.getValue();
-        }
-        return result;
-    }
-
-    public String isNull(PositionType positionType) {
-        String result = "Data not available";
-        if(positionType != null) {
-            result = positionType.getValue();
-        }
-        return result;
-    }
-
-    public String isNull(CoreCompetency coreCompetency) {
-        String result = "Data not available";
-        if(coreCompetency != null) {
-            result = coreCompetency.getValue();
-        }
-        return result;
-    }
 
     @Override
     public String toString() {
         String s = System.lineSeparator();
         String noData = "Data not available";
 
-        String chkEmployer = employer.getValue();
+        List<Object> inPuts = new ArrayList<>();
+        List<Object> outPuts = new ArrayList<>();
+        inPuts.add(name);
+        inPuts.add(employer);
+        inPuts.add(location);
+        inPuts.add(positionType);
+        inPuts.add(coreCompetency);
 
-
-
-        List outPuts = new ArrayList();
-        outPuts.add(name);
-        outPuts.add(chkEmployer);
-        outPuts.add(location);
-        outPuts.add(positionType);
-        outPuts.add(coreCompetency);
-
-        for (Object o: outPuts) {
-            if(o == null || o == "") {
-                o = noData;
+        for (Object i : inPuts) {
+            if(i == null || i == "") {
+                outPuts.add(noData);
+            } else {
+                outPuts.add(i);
             }
         }
 
-        String jobInfo = s +
+        return s +
                 "ID: " + id + s +
-                "Name: " + isNull(name) + s +
+                "Name: " + outPuts.get(0) + s +
                 "Employer: " + outPuts.get(1) + s +
-                "Location: " + isNull(location) + s +
-                "Position Type: " + isNull(positionType) + s +
-                "Core Competency: " + isNull(coreCompetency) + s;
-
-        return jobInfo;
+                "Location: " + outPuts.get(2) + s +
+                "Position Type: " + outPuts.get(3) + s +
+                "Core Competency: " + outPuts.get(4) + s;
     }
 
     @Override

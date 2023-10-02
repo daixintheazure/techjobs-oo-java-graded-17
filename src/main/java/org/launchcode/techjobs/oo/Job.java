@@ -40,6 +40,7 @@ public class Job {
         String noData = "Data not available";
 
         List<Object> inPuts = new ArrayList<>();
+        List<String> checkedNull = new ArrayList<>();
         List<Object> outPuts = new ArrayList<>();
         inPuts.add(name);
         inPuts.add(employer);
@@ -48,11 +49,20 @@ public class Job {
         inPuts.add(coreCompetency);
 
         for (Object i : inPuts) {
-            if(i == null || i.toString().isBlank() || i.toString().isEmpty()) {
+            if(i == null) {
+                checkedNull.add(i.toString());
+            } else {
+                checkedNull.add(noData);
+            }
+        }
+
+        for (String j : checkedNull) {
+            if (j.isBlank() || j.isEmpty()) {
                 outPuts.add(noData);
             } else {
-                outPuts.add(i);
+                outPuts.add(j);
             }
+
         }
 
         String jobInfo = s +

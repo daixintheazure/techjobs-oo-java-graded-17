@@ -48,7 +48,7 @@ public class Job {
         inPuts.add(coreCompetency);
 
         for (Object i : inPuts) {
-            if(i == null || i == "") {
+            if(i == null || i.toString().isBlank() || i.toString().isEmpty()) {
                 outPuts.add(noData);
             } else {
                 outPuts.add(i);
@@ -79,6 +79,7 @@ public class Job {
 
 
     public Integer getId() {
+
         return id;
     }
 

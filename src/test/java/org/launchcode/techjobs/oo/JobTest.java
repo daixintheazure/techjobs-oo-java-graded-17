@@ -9,12 +9,12 @@ public class JobTest {
     //TODO: Create your unit tests here
 
     Job testJob = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    Job testJob2;
-    Job testjob3;
+    Job testJob2 = new Job();
+    Job testjob3 = new Job();
 
     Job testJob4 = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    Job testJob5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+    Job testJob5 = new Job("", new Employer(), new Location(""), new PositionType(), new CoreCompetency(""));
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);
@@ -78,9 +78,15 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        String expectedOutput = "Data not available";
-        //assertEquals(expectedOutput, testJob5.getName());
-        assertEquals(expectedOutput, testjob3.getName());
+        String s = System.lineSeparator();
+        String expectedOutput = s +
+                "ID: " + testJob5.getId() + s +
+                "Name: " + "Data not available" + s +
+                "Employer: " + "Data not available" + s +
+                "Location: " + "Data not available" + s +
+                "Position Type: " + "Data not available" + s +
+                "Core Competency: " + "Data not available" + s;
+        assertEquals(expectedOutput, testJob5.toString());
     }
 
 }

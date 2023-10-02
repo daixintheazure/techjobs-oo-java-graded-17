@@ -14,6 +14,7 @@ public class JobTest {
 
     Job testJob4 = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
+    Job testJob5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);
@@ -62,7 +63,7 @@ public class JobTest {
     }
 
     @Test
-    public  void testToStringContainsCorrectLabelsAndData() {
+    public void testToStringContainsCorrectLabelsAndData() {
         String s = System.lineSeparator();
         String expectedOutput = s +
                               "ID: " + testJob.getId() + s +
@@ -73,6 +74,13 @@ public class JobTest {
                              "Core Competency: " + testJob.getCoreCompetency()+ s;
         assertEquals(expectedOutput, testJob.toString());
 
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        String expectedOutput = "Data not available";
+        //assertEquals(expectedOutput, testJob5.getName());
+        assertEquals(expectedOutput, testjob3.getName());
     }
 
 }

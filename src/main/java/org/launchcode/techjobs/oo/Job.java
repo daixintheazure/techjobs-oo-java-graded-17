@@ -8,7 +8,6 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-
     private String name;
     private Employer employer;
     private Location location;
@@ -19,11 +18,12 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
     public Job () {
-        id = nextId++;
+        id = nextId;
+        nextId++;
     }
 
     public Job (String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        id = nextId++;
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -87,8 +87,7 @@ public class Job {
     //  and id.
 
 
-    public Integer getId() {
-
+    public int getId() {
         return id;
     }
 

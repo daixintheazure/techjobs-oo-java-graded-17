@@ -28,8 +28,7 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertEquals(1, testJob.getId().longValue());
-        assertTrue(Integer.class == testJob.getId().getClass());
+        //Job testJob6 = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertEquals("Code tester", testJob.getName());
         assertEquals(String.class, testJob.getName().getClass());

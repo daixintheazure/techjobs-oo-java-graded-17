@@ -50,19 +50,18 @@ public class Job {
 
         for (Object i : inPuts) {
             if(i == null) {
-                checkedNull.add(i.toString());
-            } else {
                 checkedNull.add(noData);
+            } else {
+                checkedNull.add(i.toString());
             }
         }
 
         for (String j : checkedNull) {
-            if (j.isBlank() || j.isEmpty()) {
+            if (j == null || j.isBlank() || j.isEmpty()) {
                 outPuts.add(noData);
             } else {
                 outPuts.add(j);
             }
-
         }
 
         String jobInfo = s +

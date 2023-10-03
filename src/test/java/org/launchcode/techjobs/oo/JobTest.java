@@ -11,10 +11,9 @@ public class JobTest {
     Job testJob = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     Job testJob2 = new Job();
     Job testjob3 = new Job();
-
     Job testJob4 = new Job("Code tester", new Employer("CODE"), new Location("Eworld"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
     Job testJob5 = new Job("", new Employer(), new Location(""), new PositionType(), new CoreCompetency(""));
+
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);

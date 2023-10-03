@@ -9,7 +9,7 @@ public class Main {
         Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
         Job job4 = new Job();
-        Job job5 = new Job("", new Employer(), new Location(), new PositionType(""), new CoreCompetency());
+        Job job5 = new Job("", new Employer(), new Location("Hope"), new PositionType(""), new CoreCompetency());
 
         ArrayList<Job> jobs = new ArrayList<>();
         jobs.add(job1);

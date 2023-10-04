@@ -3,6 +3,7 @@ package org.launchcode.techjobs.oo;
 import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Job {
 
@@ -82,6 +83,12 @@ public class Job {
         Job job = (Job) o;
         return getId() == job.getId();
     }
+
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.

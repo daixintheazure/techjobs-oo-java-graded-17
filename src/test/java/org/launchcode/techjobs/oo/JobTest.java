@@ -2,7 +2,6 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
-import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -52,7 +51,7 @@ public class JobTest {
     }
 
     @Test
-    public void testToStringFirstAndLastBlankSpace() {
+    public void testToStringStartsAndEndsWithNewLine() {
         String s = System.lineSeparator();
         String firstChar = String.valueOf(testJob.toString().charAt(0));
         String lastChar = String.valueOf((testJob.toString().charAt(testJob.toString().length()-1)));
